@@ -15,4 +15,8 @@ public interface StudentService {
     void deleteStudent(int studentId);
 
     List<Student> getStudents();
+
+    boolean studentExists(int studentId);
+
+    boolean passportIsValid(Student student);
 }

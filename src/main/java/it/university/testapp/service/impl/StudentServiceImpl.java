@@ -53,4 +53,18 @@ public class StudentServiceImpl implements StudentService {
     public List<Student> getStudents() {
         return (List<Student>) studentDAO.findAll();
     }
+
+    @Override
+    public boolean studentExists(int studentId) {
+        return studentDAO.existsStudentById(studentId);
+    }
+
+    @Override
+    public boolean passportIsValid(Student student) {
+        if (student.getPassport().matches("[0-9]{4}[ ][0-9]{6}")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

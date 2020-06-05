@@ -7,7 +7,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface StudentDAO extends CrudRepository<Student, Integer> {
 
-    boolean existsStudentByPassport(long passport);
+    boolean existsStudentByPassport(String passport);
 
-    boolean existsStudentByPassportAndIdIsNot(long passport, int excludeId);
+    boolean existsStudentByPassportAndIdIsNot(String passport, int excludeId);
+
+    boolean existsStudentById(int id);
 }
